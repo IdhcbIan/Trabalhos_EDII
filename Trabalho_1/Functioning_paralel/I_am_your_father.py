@@ -3,7 +3,7 @@ import json
 import subprocess
 from multiprocessing import Pool
 
-arr = [3, 4, 2, 1, 6, 5]
+arr = [3, 4, 2, 1, 6, 5, 8, 7, 10, 9]
 
 processes = [('son.py', arr)]
 
