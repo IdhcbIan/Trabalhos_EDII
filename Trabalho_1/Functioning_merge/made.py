@@ -2,35 +2,58 @@
 
 
 
-def order(L):
-    if len(L) <= 1:
-        return L 
+def order(arr):
+    if len(arr) <= 1:
+        return arr 
     else:
-        h = len(L)//2
-        FH = L[:h]
-        SH = L[h:]
-        
-        #print(FH)
-        #print(SH)
+        h = len(arr)//2
+        FH = arr[:h]
+        SH = arr[h:]
         
         FH = order(FH)
         SH = order(SH)
 
         i = j = k = 0
-        new = []
 
-        while len(FH) > 0 or len(SH) > 0: 
-            if FH[0] < SH[0] or len(SH) == 0:
-                new.append(FH[0])
-                FH.remove(FH[0])
+        while i < len(FH) and j < len(SH):
+            if FH[i] < SH[j]:
+                arr[k] = FH[i]
+                i += 1
             else:
-                new.append(SH[0])
-                SH.remove(SH[0])
+                arr[k] = SH[j]
+                j += 1
+            k += 1
 
-            
-        print(new)
-        return new
+        while i < len(FH):
+            arr[k] = FH[i]
+            i += 1
+            k += 1
+
+        while j < len(SH):
+            arr[k] = SH[j]
+            j += 1
+            k += 1
+
+    return arr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 A = [1,3,4,2]
 
-order(A)
+print(order(A))
