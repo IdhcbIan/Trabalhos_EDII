@@ -1,5 +1,5 @@
-import subprocess
 import time
+import subprocess
 
 name = input("Enter the name of the file: ")
 num_tests = int(input("Enter the number of tests: "))
@@ -13,10 +13,10 @@ def run_and_count(name, num_tests, file_in):
         input_data = file.read()
 
     for i in range(num_tests):
-        start_time = time.time()
+        start = time.time()
         subprocess.run(['python3', name], input=input_data, text=True, capture_output=True)
-        elapsed_time = time.time() - start_time 
-        main.append(elapsed_time)
+        elapsed = time.time() - start 
+        main.append(elapsed)
         average = sum(main) / len(main)
         return average
 
