@@ -1,6 +1,7 @@
 #This is a attempt of me to do a merge sort with no help!!
-def get_input(text):
-    arr = [int(i) for i in text.split()]
+def get_input():
+    size = input()
+    arr = [int(i) for i in input().split()]
     return arr
     
 
@@ -41,5 +42,5 @@ def order(arr):
 
 
 
-
-print(order(get_input(input())))
+main_arr = order(get_input())
+print(*main_arr, sep=" ")

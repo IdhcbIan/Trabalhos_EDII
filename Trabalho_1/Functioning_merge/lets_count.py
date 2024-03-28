@@ -1,14 +1,19 @@
 import subprocess
 import time
-
+"""
 name = input("Enter the name of the file: ")
 num_tests = int(input("Enter the number of tests: "))
 file_in = int(input("Enter first name of in file: "))
+"""
+name = 'run'
+num_tests = 10000
+file_in = 2
 
 def run_and_count(name, num_tests, file_in):
     main = []
 
     file_in = str(file_in) + ".in"
+    print(file_in)
     with open(file_in, 'r') as file:
         input_data = file.read()
 
